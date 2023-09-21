@@ -1,5 +1,5 @@
 import { utilService } from "../services/util.service"
-
+import { SimpleMap } from '../comp/StoreLocation'
 export function AboutUs() {
 
     return (
@@ -7,6 +7,7 @@ export function AboutUs() {
             <h2>About Us</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aperiam quo veniam velit dolor reprehenderit, laudantium consequatur neque numquam labore quae. Accusamus libero perferendis ducimus? Alias unde hic quisquam doloremque.</p>
             {/* <img src={utilService.getAssetSrc('vite.svg')} alt="" /> */}
+            <SimpleMap />
         </section>
     )
 }

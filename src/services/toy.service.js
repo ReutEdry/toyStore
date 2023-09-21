@@ -27,6 +27,7 @@ function getById(toyId) {
 }
 
 function save(toy) {
+    console.log(toy)
     if (toy._id) {
         return httpService.put(BASE_URL, toy)
     } else {
@@ -45,6 +46,7 @@ function getEmptyToy() {
         price: '',
         createdAt: Date.now(),
         lables: labels[labelIdx],
-        inStock: true
+        inStock: true,
+        label: labels[labelIdx]
     }
 }
