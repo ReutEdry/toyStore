@@ -37,8 +37,7 @@ export function ToyIndex() {
     function onAddToy() {
         const toyName = prompt('Enter doll name')
         const toyPrice = +prompt('Enter doll price')
-        const newToy = toyService.getEmptyToy()
-        const toyToSave = { ...newToy, name: toyName, price: toyPrice }
+        const toyToSave = { name: toyName, price: toyPrice }
         saveToy(toyToSave)
             .then(savedToy => {
                 showSuccessMsg(`Toy added (id: ${savedToy._id})`)

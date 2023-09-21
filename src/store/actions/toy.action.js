@@ -5,7 +5,6 @@ import { store } from "../store";
 
 
 export function loadToys(filterBy) {
-
     store.dispatch({ type: SET_IS_LOADING, isLoading: true })
     return toyService.query(filterBy)
         .then(toys => {
@@ -13,7 +12,7 @@ export function loadToys(filterBy) {
             return toys
         })
         .catch(err => {
-            console.log('toy action -> Cannot load todos', err)
+            console.log('toy action -> Cannot load toys', err)
             throw err
         })
         .finally(() => {
@@ -22,18 +21,21 @@ export function loadToys(filterBy) {
 }
 
 export function removeToyOptimistic(toyId) {
-    store.dispatch({ type: REMOVE_TOY, toyId })
     return toyService.remove(toyId)
+        .then(() => {
+            store.dispatch({ type: REMOVE_TOY, toyId })
+        })
         .catch(err => {
             store.dispatch({ type: TOY_UNDO })
-            console.log('todo action -> Cannot remove todo', err)
+            console.log('toy action -> Cannot remove toy', err)
             throw err
         })
 }
 
 export function saveToy(toyToSave) {
-    console.log('toyToSave', toyToSave)
+    // console.log('toyToSave', toyToSave)
     const type = toyToSave._id ? UPDATE_TOY : ADD_TOY
+    // console.log('type', type)
     return toyService.save(toyToSave)
         .then((savedToy) => {
             store.dispatch({ type, savedToy })
