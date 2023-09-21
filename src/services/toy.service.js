@@ -27,7 +27,6 @@ function getById(toyId) {
 }
 
 function save(toy) {
-    console.log(toy)
     if (toy._id) {
         return httpService.put(BASE_URL, toy)
     } else {
@@ -36,7 +35,7 @@ function save(toy) {
 }
 
 function getDefaultFilter() {
-    return { byName: '', inStock: '', byLable: '', sortBy: '' }
+    return { byName: '', inStock: '', byLable: [], sortBy: '' }
 }
 
 function getEmptyToy() {
@@ -45,8 +44,7 @@ function getEmptyToy() {
         name: '',
         price: '',
         createdAt: Date.now(),
-        lables: labels[labelIdx],
+        lables: [labels[labelIdx]],
         inStock: true,
-        label: labels[labelIdx]
     }
 }

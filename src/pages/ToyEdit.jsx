@@ -7,7 +7,6 @@ import { saveToy } from '../store/actions/toy.action.js'
 
 export function ToyEdit() {
   const navigate = useNavigate()
-  const [editValues, setEditValues] = useState([])
   const [toyToEdit, setToyToEdit] = useState(toyService.getEmptyToy())
 
   const { toyId } = useParams()
@@ -41,6 +40,7 @@ export function ToyEdit() {
 
   function getToy(ev) {
     ev.preventDefault()
+    console.log('hh', toyToEdit);
     saveToy(toyToEdit)
       .then((saveToy) => {
         showSuccessMsg(`Toy edited (id: ${saveToy._id})`)
@@ -52,6 +52,8 @@ export function ToyEdit() {
         showErrorMsg('Cannot update toy')
       })
   }
+
+  console.log('xx', toyToEdit);
 
   const { name, price } = toyToEdit
 

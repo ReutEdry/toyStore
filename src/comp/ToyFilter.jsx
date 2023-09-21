@@ -13,6 +13,7 @@ export function ToyFilter({ filterBy, onSetFilter }) {
     function handleChange({ target }) {
         const field = target.name
         let value = target.value
+
         switch (target.type) {
             case 'number':
             case 'range':
@@ -21,13 +22,15 @@ export function ToyFilter({ filterBy, onSetFilter }) {
             case 'checkbox':
                 value = target.checked
                 break
+            case 'select-multiple':
+                value = Array.from(target.selectedOptions, (option) => option.value)
             default:
                 break
         }
         setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
     }
 
-    const { byName, inStock, byLable, sortBy } = filterByToEdit
+    const { byName, inStock, sortBy, byLable } = filterByToEdit
     return (
         <section className="bug-filter">
             <input onChange={handleChange} type="text"
@@ -41,7 +44,7 @@ export function ToyFilter({ filterBy, onSetFilter }) {
             </select>
 
             <label htmlFor="byLable">Search by lable:</label>
-            <select onChange={handleChange} name="byLable" value={byLable} id="myLable">
+            <select onChange={handleChange} name="byLable" value={byLable} id="myLable" multiple>
                 <option value="">All</option>
                 {labels.map(label =>
                     <option key={label} value={label}>
