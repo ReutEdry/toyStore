@@ -6,6 +6,7 @@ import { loadToys, removeToyOptimistic, saveToy } from '../store/actions/toy.act
 import { ToyList } from '../comp/ToyList'
 import { ToyFilter } from '../comp/ToyFilter'
 import { SET_FILTER } from '../store/reducers/toy.reducer.js'
+import { Link } from 'react-router-dom'
 
 export function ToyIndex() {
 
@@ -13,6 +14,7 @@ export function ToyIndex() {
     const toys = useSelector(storeState => storeState.toyModule.toys)
     const filterBy = useSelector(storeState => storeState.toyModule.filterBy)
     const isLoading = useSelector(storeState => storeState.toyModule.isLoading)
+
 
     useEffect(() => {
         loadToys(filterBy)
@@ -34,21 +36,6 @@ export function ToyIndex() {
             })
     }
 
-    function onAddToy() {
-        const toyName = prompt('Enter doll name')
-        const toyPrice = +prompt('Enter doll price')
-        const toyToSave = { name: toyName, price: toyPrice }
-        saveToy(toyToSave)
-            .then(savedToy => {
-                showSuccessMsg(`Toy added (id: ${savedToy._id})`)
-            })
-            .catch(err => {
-                console.log('Cannot add toy', err)
-                showErrorMsg('Cannot add toy')
-            })
-    }
-
-
     function onSetFilter(filterBy) {
         dispatch({ type: SET_FILTER, filterBy })
     }
@@ -57,7 +44,7 @@ export function ToyIndex() {
         <div>
             <h3>Toys App</h3>
             <main>
-                <button onClick={onAddToy}>Add toy 🪀</button>
+                <button><Link to="/toy/edit">Add toy 🪀</Link></button>
                 <ToyFilter filterBy={filterBy} onSetFilter={onSetFilter} />
                 {!isLoading && <ToyList toys={toys} onRemoveToy={onRemoveToy} />}
                 {isLoading && <div>Loading...</div>}

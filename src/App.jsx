@@ -21,6 +21,7 @@ export function App() {
               <Route path="/about" element={<AboutUs />} />
               <Route path="/toy" element={<ToyIndex />} />
               <Route path="/toy/edit/:toyId" element={<ToyEdit />} />
+              <Route path="/toy/edit" element={<ToyEdit />} />
             </Routes>
           </main>
           {/* <AppFooter /> */}

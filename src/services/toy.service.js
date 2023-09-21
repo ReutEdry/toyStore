@@ -1,13 +1,17 @@
 import { httpService } from './http.service'
+import { utilService } from '../services/util.service'
 
 const BASE_URL = 'toy/'
+const labels = ['Doll', 'Battery Powered', 'Talking', 'Beauty', 'Girls', 'Animal', 'Trip', 'Sport', 'Ride']
+
 
 export const toyService = {
     query,
     remove,
     getById,
     save,
-    getDefaultFilter
+    getDefaultFilter,
+    getEmptyToy
 }
 
 function query(filterBy = {}) {
@@ -32,4 +36,15 @@ function save(toy) {
 
 function getDefaultFilter() {
     return { byName: '', inStock: '', byLable: '', sortBy: '' }
+}
+
+function getEmptyToy() {
+    let labelIdx = utilService.getRandomIntInclusive(0, labels.length)
+    return {
+        name: '',
+        price: '',
+        createdAt: Date.now(),
+        lables: labels[labelIdx],
+        inStock: true
+    }
 }

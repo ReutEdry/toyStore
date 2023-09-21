@@ -33,13 +33,11 @@ export function removeToyOptimistic(toyId) {
 }
 
 export function saveToy(toyToSave) {
-    // console.log('toyToSave', toyToSave)
     const type = toyToSave._id ? UPDATE_TOY : ADD_TOY
-    // console.log('type', type)
     return toyService.save(toyToSave)
-        .then((savedToy) => {
-            store.dispatch({ type, savedToy })
-            return savedToy
+        .then((toy) => {
+            store.dispatch({ type, toy })
+            return toy
         })
         .catch(err => {
             console.log('toy action -> Cannot save toy', err)
