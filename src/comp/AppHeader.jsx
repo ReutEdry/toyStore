@@ -5,12 +5,13 @@ export function AppHeader() {
 
     return (
         <header className="app-header">
-            <nav>
-                <NavLink to="/">Home</NavLink> |
-                <NavLink to="/toy">Toys</NavLink> |
-                <NavLink to="/about">About Us</NavLink> |
+            <h1>Reut's Toy Shop</h1>
+            <nav className='nav-container'>
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/toy" className='toys-link'>Toys</NavLink>
+                <NavLink to="/about">About Us</NavLink>
+                <NavLink to="/dashboard">Dashboard</NavLink>
             </nav>
-            <h1>My App</h1>
             <UserMsg />
         </header>
     )

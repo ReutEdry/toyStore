@@ -40,7 +40,6 @@ export function ToyEdit() {
 
   function getToy(ev) {
     ev.preventDefault()
-    console.log('hh', toyToEdit);
     saveToy(toyToEdit)
       .then((saveToy) => {
         showSuccessMsg(`Toy edited (id: ${saveToy._id})`)

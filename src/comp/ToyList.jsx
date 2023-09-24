@@ -5,11 +5,11 @@ import { ToyPreview } from "./ToyPreview"
 export function ToyList({ toys, onRemoveToy }) {
 
     return (
-        <ul className="car-list">
+        <ul className="toy-list">
             {toys.map(toy =>
-                <li className="car-preview" key={toy._id}>
+                <li className="toy-preview" key={toy._id}>
                     <ToyPreview toy={toy} />
-                    <div>
+                    <div className="editing-toy-btn">
                         <button onClick={() => onRemoveToy(toy._id)}>x</button>
                         <Link to={`/toy/edit/${toy._id}`}>
                             <button>Edit</button>

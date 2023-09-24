@@ -76,8 +76,8 @@ function animateCSS(el, animation) {
 }
 
 function getAssetSrc(name) {
-    const path = `/src/assets/img/${name}`
+    const path = `/src/assets/imgages/${name}`
     const modules = import.meta.globEager('/src/assets/img/*')
     const mod = modules[path]
-    return mod.default
+    return mod
 }

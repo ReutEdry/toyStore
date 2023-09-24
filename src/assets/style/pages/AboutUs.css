@@ -1,0 +1,36 @@
+.about-us-container {
+    width: 600px;
+    padding: 15px;
+    margin: 15px auto;
+    border: 1px solid lightgray;
+    box-shadow: 0px 3px 15px lightgrey;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.about-us-details p {
+    text-align: justify;
+}
+
+.about-us-details img {
+    width: 20%;
+    border-radius: 30px;
+    margin-inline-start: 25px;
+}
+
+.google-container {
+    height: 60vh;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.google-search-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-inline-start: 10px;
+}
