@@ -52,20 +52,26 @@ export function ToyEdit() {
       })
   }
 
-  console.log('xx', toyToEdit);
-
   const { name, price } = toyToEdit
 
   return (
-    <section className="toy-edit">
-      <h2>Edit Toy</h2>
-      <form onSubmit={getToy}>
-        <label htmlFor="name">Name:</label>
-        <input onChange={handleChange} type="text" name="name" id="name" placeholder='Toy name:' value={name} />
-        <label htmlFor="price"></label>
-        <input type="number" onChange={handleChange} name="price" id="price" placeholder='Toy price:' value={price} />
-        <button>Save</button>
-      </form>
+    <section className='toy-edit-container'>
+
+      <section className="toy-edit">
+        <h2>Edit Toy</h2>
+        <form onSubmit={getToy} className='edit-form'>
+          <div className='form-group'>
+
+            <label htmlFor="name">Name:</label>
+            <input required="" onChange={handleChange} type="text" name="name" id="name" placeholder='Toy name:' value={name} />
+          </div>
+          <div className='form-group'>
+            <label htmlFor="price">Price:</label>
+            <input required="" type="number" onChange={handleChange} name="price" id="price" placeholder='Toy price:' value={price} />
+          </div>
+          <button className='form-submit-btn'>Save</button>
+        </form>
+      </section>
     </section>
   )
 }

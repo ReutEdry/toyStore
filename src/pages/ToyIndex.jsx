@@ -7,6 +7,7 @@ import { ToyList } from '../comp/ToyList'
 import { ToyFilter } from '../comp/ToyFilter'
 import { SET_FILTER } from '../store/reducers/toy.reducer.js'
 import { Link } from 'react-router-dom'
+import { UserMsg } from '../comp/UserMsg'
 
 export function ToyIndex() {
 
@@ -54,6 +55,7 @@ export function ToyIndex() {
                 </section>
                 {isLoading && <div>Loading...</div>}
             </main>
+            {/* <UserMsg /> */}
         </div>
     )
 

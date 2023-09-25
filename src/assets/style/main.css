@@ -5,6 +5,8 @@
 @import './pages/ToyIndex.css';
 @import './pages/Home.css';
 @import './pages/AboutUs.css';
+@import './pages/dashboard.css';
+@import './pages/toyEdit.css';
 
 /* comp */
 @import './comp/ToyFilter.css';
