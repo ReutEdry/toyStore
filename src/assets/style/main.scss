@@ -1,0 +1,14 @@
+/* base: */
+@import './base/base';
+
+/* pages */
+@import './pages/toyIndex.scss';
+@import './pages/home';
+@import './pages/aboutUs';
+@import './pages/dashboard';
+@import './pages/toyEdit';
+
+/* comp */
+@import './comp/toyFilter';
+@import './comp/toyList';
+@import './comp/appHeader';
