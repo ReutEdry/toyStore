@@ -5,7 +5,7 @@ import { Doughnut } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export function ToyChart({ labelCounts }) {
+export function LabelsDoughnutChart({ labelCounts }) {
     const data = {
         labels: Object.keys(labelCounts),
 

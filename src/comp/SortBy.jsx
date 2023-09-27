@@ -7,12 +7,12 @@ import Select from '@mui/material/Select';
 export function SortBy({ handleChange, sortBy }) {
     return (
         <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-            <InputLabel id="demo-select-small-label">Sort By</InputLabel>
+            <InputLabel id="demo-select-small-label">Sort by</InputLabel>
             <Select
                 labelId="demo-select-small-label"
                 id="demo-select-small"
                 value={sortBy}
-                label=""
+                label="Sort by"
                 onChange={handleChange}
                 name="sortBy"
             >

@@ -102,7 +102,7 @@ export function LabelSelect({ handleChange, labels, byLable }) {
                     value={byLable}
                     onChange={handleChange}
                     name="byLable"
-                    input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+                    input={<OutlinedInput id="select-multiple-chip" label="Filter by toy label" />}
                     renderValue={(selected) => (
                         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                             {selected.map((value) => (

@@ -38,7 +38,10 @@ export function CardToyPreview({ toy, onRemoveToy }) {
                                 <button size="small">Edit</button>
                             </Link>
                             <button size="small" onClick={() => onRemoveToy(_id)}>Delete</button>
-                            <button size="small">Learn More</button>
+                            <Link to={`/toy/details/${_id}`}>
+                                <button size="small">Learn More</button>
+                            </Link>
+
                         </div>
                     </div>
                 </CardActions>

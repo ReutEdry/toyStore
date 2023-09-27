@@ -12,7 +12,7 @@ export function FilterInput({ handleChange, byName }) {
             noValidate
             autoComplete="off"
         >
-            <TextField id="standard-basic" label="Outlined" variant="outlined" onChange={handleChange} value={byName} name='byName' />
+            <TextField id="standard-basic" label="Search" variant="outlined" onChange={handleChange} value={byName} name='byName' />
         </Box>
     );
 }

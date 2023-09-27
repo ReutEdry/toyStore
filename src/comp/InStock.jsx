@@ -7,12 +7,12 @@ import Select from '@mui/material/Select';
 export function InStock({ handleChange, inStock }) {
     return (
         <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-            <InputLabel id="demo-select-small-label">In Stock</InputLabel>
+            <InputLabel id="demo-select-small-label">In stock</InputLabel>
             <Select
                 labelId="demo-select-small-label"
                 id="demo-select-small"
                 value={inStock}
-                label=""
+                label="In stock"
                 onChange={handleChange}
                 name="inStock"
             >

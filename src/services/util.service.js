@@ -6,7 +6,8 @@ export const utilService = {
     saveToStorage,
     animateCSS,
     debounce,
-    getAssetSrc
+    getAssetSrc,
+    formatDate
 }
 
 function makeId(length = 6) {
@@ -52,6 +53,25 @@ function debounce(func, timeout = 300) {
     return (...args) => {
         clearTimeout(timer)
         timer = setTimeout(() => { func.apply(this, args) }, timeout)
+    }
+}
+
+function formatDate(timestamp) {
+    const now = new Date().getTime();
+    const differenceInMilliseconds = now - timestamp;
+    const differenceInSeconds = Math.floor(differenceInMilliseconds / 1000);
+    const differenceInMinutes = Math.floor(differenceInSeconds / 60);
+    const differenceInHours = Math.floor(differenceInMinutes / 60);
+    const differenceInDays = Math.floor(differenceInHours / 24);
+
+    if (differenceInMinutes < 1) {
+        return "just now";
+    } else if (differenceInMinutes < 60) {
+        return differenceInMinutes + " min ago";
+    } else if (differenceInHours < 24) {
+        return differenceInHours + " hours ago";
+    } else {
+        return differenceInDays + " days ago";
     }
 }
 
